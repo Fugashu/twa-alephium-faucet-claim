@@ -6,9 +6,13 @@ const WalletConnectButton = () => {
     <AlephiumConnectButton.Custom>
       {({ isConnected, disconnect, show }) => {
         return isConnected ? (
-          <Button onClick={disconnect}>Disconnect</Button>
+          <Button variant={'light'} onClick={disconnect}>
+            Disconnect
+          </Button>
         ) : (
-          <Button onClick={show}>Connect</Button>
+          <Button variant={'light'} onClick={show}>
+            Connect
+          </Button>
         );
       }}
     </AlephiumConnectButton.Custom>

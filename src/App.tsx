@@ -2,12 +2,13 @@ import './App.css';
 import { AlephiumWalletProvider } from '@alephium/web3-react';
 import { theme } from './theme.ts';
 import { MantineProvider } from '@mantine/core';
-import WalletConnectButton from './components/WalletConnectButton.tsx';
+import MainPage from "./pages/main.page.tsx";
+import {Notifications} from "@mantine/notifications";
 function App() {
   return (
     <MantineProvider theme={theme}>
-      <AlephiumWalletProvider network={'testnet'}>
-        <WalletConnectButton />
+      <AlephiumWalletProvider network={'testnet'}>      <Notifications />
+          <MainPage/>
       </AlephiumWalletProvider>
     </MantineProvider>
   );
