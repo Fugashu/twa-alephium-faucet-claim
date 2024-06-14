@@ -1,32 +1,36 @@
 import axios from 'axios';
 import { useWallet } from '@alephium/web3-react';
-import { Button } from '@mantine/core';
+import { Button, TextInput } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
+import { useEffect, useState } from 'react';
+import { IconWallet } from '@tabler/icons-react';
 
 const ClaimFromFaucetButton = () => {
   const { account } = useWallet();
+  const [addr, setAddr] = useState('');
+
+  useEffect(() => {
+    setAddr(account?.address);
+  }, [account?.address]);
   const claimFromFaucet = async () => {
-    if (!account?.address) {
+    if (addr === '') {
       notifications.show({
         title: 'Error!',
-        message: 'Connect your Alephium wallet to claim testnet tokens.',
+        message:
+          'Connect your Alephium wallet or input your address above to claim testnet tokens.',
       });
       return;
     }
     try {
-      const response = await axios.post(
-        'https://faucet.testnet.alephium.org/send',
-        account.address,
-        {
-          headers: {
-            'Content-Type': 'text/plain',
-          },
-        }
-      );
+      const response = await axios.post('https://faucet.testnet.alephium.org/send', addr, {
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+      });
       console.log('Response:', response.data);
       notifications.show({
         title: 'Success!',
-        message: 'You will receive Alephium testnet tokens shortly!',
+        message: `You will receive Alephium testnet tokens on ${addr}!`,
       });
     } catch (error) {
       console.error('Error sending faucet request:', error);
@@ -38,9 +42,16 @@ const ClaimFromFaucetButton = () => {
     }
   };
   return (
-    <Button variant={'light'} onClick={claimFromFaucet}>
-      Claim from Faucet
-    </Button>
+    <>
+      <TextInput
+        leftSection={<IconWallet />}
+        value={addr}
+        onChange={(event) => setAddr(event.currentTarget.value)}
+      />{' '}
+      <Button variant={'light'} onClick={claimFromFaucet}>
+        Claim from Faucet
+      </Button>
+    </>
   );
 };
 export default ClaimFromFaucetButton;
