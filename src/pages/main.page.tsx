@@ -5,7 +5,7 @@ import ConnectedAddr from '../components/ConnectedAddr.tsx';
 
 const MainPage = () => {
   return (
-    <Container>
+    <Container fluid>
       <Stack gap={'xl'} justify={'center'}>
         <Stack align={'center'}>
           <Title c={'white'}>TWAlph</Title>
