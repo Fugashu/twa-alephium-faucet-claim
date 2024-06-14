@@ -18,7 +18,7 @@ const MainPage = () => {
         <ClaimFromFaucet />
         <Center>
           <a
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: 'none', color: 'inherit' }}
             href={'https://github.com/Fugashu/twa-alephium-faucet-claim'}
           >
             <IconBrandGithub />
