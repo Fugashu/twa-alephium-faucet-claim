@@ -47,8 +47,8 @@ const ClaimFromFaucet = () => {
         leftSection={<IconWallet />}
         value={addr}
         required
+        label="Testnet Wallet Address"
         withAsterisk
-        description="Testnet Wallet Address"
         onChange={(event) => setAddr(event.currentTarget.value)}
       />{' '}
       <Button variant={'light'} onClick={claimFromFaucet}>
