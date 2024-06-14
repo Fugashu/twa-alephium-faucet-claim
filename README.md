@@ -1,4 +1,4 @@
-# Telegram Mini Apps(TMA) + React + TypeScript + Vite + Alephium
+# Telegram Web App(TWA) + React + TypeScript + Vite + Alephium + MantineUI
 
 ## Usage
 

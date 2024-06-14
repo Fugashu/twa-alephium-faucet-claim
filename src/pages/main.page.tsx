@@ -1,6 +1,7 @@
-import { Container, Stack, Text, Title } from '@mantine/core';
+import { Center, Container, Stack, Text, Title } from '@mantine/core';
 import WalletConnectButton from '../components/WalletConnectButton.tsx';
-import ClaimFromFaucetButton from '../components/ClaimFromFaucetButton.tsx';
+import ClaimFromFaucet from '../components/ClaimFromFaucet.tsx';
+import { IconBrandGithub } from '@tabler/icons-react';
 
 const MainPage = () => {
   return (
@@ -14,7 +15,12 @@ const MainPage = () => {
           </Text>
         </Stack>
         <WalletConnectButton />
-        <ClaimFromFaucetButton />
+        <ClaimFromFaucet />
+        <Center>
+          <a href={'https://github.com/Fugashu/twa-alephium-faucet-claim'}>
+            <IconBrandGithub />
+          </a>
+        </Center>
       </Stack>
     </Container>
   );

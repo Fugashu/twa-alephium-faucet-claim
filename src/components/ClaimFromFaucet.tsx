@@ -5,7 +5,7 @@ import { notifications } from '@mantine/notifications';
 import { useEffect, useState } from 'react';
 import { IconWallet } from '@tabler/icons-react';
 
-const ClaimFromFaucetButton = () => {
+const ClaimFromFaucet = () => {
   const { account } = useWallet();
   const [addr, setAddr] = useState('');
 
@@ -54,4 +54,4 @@ const ClaimFromFaucetButton = () => {
     </>
   );
 };
-export default ClaimFromFaucetButton;
+export default ClaimFromFaucet;
