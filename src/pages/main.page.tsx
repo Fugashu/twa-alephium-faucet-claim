@@ -17,7 +17,10 @@ const MainPage = () => {
         <WalletConnectButton />
         <ClaimFromFaucet />
         <Center>
-          <a href={'https://github.com/Fugashu/twa-alephium-faucet-claim'}>
+          <a
+            style={{ textDecoration: 'none' }}
+            href={'https://github.com/Fugashu/twa-alephium-faucet-claim'}
+          >
             <IconBrandGithub />
           </a>
         </Center>

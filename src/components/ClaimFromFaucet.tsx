@@ -46,6 +46,7 @@ const ClaimFromFaucet = () => {
       <TextInput
         leftSection={<IconWallet />}
         value={addr}
+        required
         onChange={(event) => setAddr(event.currentTarget.value)}
       />{' '}
       <Button variant={'light'} onClick={claimFromFaucet}>
